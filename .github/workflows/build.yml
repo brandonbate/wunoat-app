@@ -3,7 +3,7 @@ name: Build Mac App
 on:
   push:
     branches:
-      - main # Triggers when you push to main
+      - main
 
 jobs:
   build-mac:
@@ -11,10 +11,10 @@ jobs:
     
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4 # Updated to v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4 # Updated to v4
         with:
           node-version: 18
 
@@ -27,7 +27,7 @@ jobs:
           GH_TOKEN: ${{ secrets.github_token }}
 
       - name: Upload Artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4 # Updated to v4
         with:
           name: mac-installer
           path: dist/*.dmg
