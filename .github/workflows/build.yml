@@ -11,12 +11,12 @@ jobs:
     
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4 # Updated to v4
+        uses: actions/checkout@v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4 # Updated to v4
+        uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 22 # Updated from 18 to 22
 
       - name: Install dependencies
         run: npm install
@@ -27,7 +27,8 @@ jobs:
           GH_TOKEN: ${{ secrets.github_token }}
 
       - name: Upload Artifact
-        uses: actions/upload-artifact@v4 # Updated to v4
+        uses: actions/upload-artifact@v4
         with:
           name: mac-installer
           path: dist/*.dmg
+
