@@ -1,0 +1,33 @@
+{
+   "name": "wunoat-app",
+   "version": "0.0.1",
+   "description": "Wunoat",
+   "main": "main.js",
+   "author": "Brandon <brandonbate@gamil.com>",
+   "homepage": "https://www.wunoat.com",
+   "scripts": {
+      "start": "electron .",
+      "dist:win": "electron-builder --win",
+      "dist:mac": "electron-builder --mac",
+      "dist:linux": "electron-builder --linux"
+   },
+   "build": {
+      "appId": "com.wunoat.app",
+      "productName": "Wunoat",
+      "mac": {
+         "target": "dmg",
+         "category": "public.app-category.education"
+      },
+      "win": {
+         "target": "nsis"
+      },
+      "linux": {
+         "target": [
+            "AppImage",
+            "pacman",
+            "deb"
+         ],
+         "category": "Education"
+      }
+   }
+}
